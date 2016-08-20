@@ -1,0 +1,97 @@
+{% load static %}
+{% load staticfiles %}
+
+
+
+
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+
+<head>    
+
+<link type="text/css" rel="stylesheet" href="{% static 'css/estilos.css' %}"  media="screen,projection"/>
+    
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+<link rel="icon" type="image/png" href="css/pelota.png" />
+
+<title>Conversor</title>
+    
+    
+    
+</head>
+
+<body>    
+    <div id="divses" class="input-field col s12">
+        <h5>Moneda 1:</h5>
+    <select class="browser-default"id="cmbox1">
+        <option value="0">Select</option>
+        <option value="1">Dolar</option>
+        <option value="1.127">Euro</option>
+        <option value="0.068">Peso Argentino</option>
+        <option value="0.015">Peso Chileno</option>
+        <option value="0.031">Peso Uruguayo</option>
+        <option value="0.27">Reales</option>
+
+    </select >
+Cantidad: <input id="v1"style="border-radius:6px;color:black;width:400px;height:40px;margin-top:20;background-color:white" value="">
+
+        
+        <div class="input-field col s12">
+    <h5>Moneda 2:</h5>
+
+    <select id="cmbox2" class="browser-default">
+        
+        <option value="Select">Select</option>
+        <option value="1">Dolar</option>
+        <option value="1.127">Euro</option>
+        <option value="0.068">Peso Argentino</option>
+        <option value="0.015">Peso Chileno</option>
+        <option value="0.031">Peso Uruguayo</option>
+        <option value="0.27">Reales</option>
+    </select>
+</div>
+        <p>
+       Resultado: <input disabled id="v2" style="border-radius:6px;color:black;width:400px;height:40px;margin-top:20;background-color:white" value="">
+        </p>
+        
+        
+        
+        <p>
+        <input id="buttonst" type="button" value="Calcular" onclick="calcula()">
+            <input id="buttonst" type="button" value="Limpiar" onclick  = "borra()">
+        </p>
+  </div>
+       
+    
+    
+    
+
+  
+
+    <script type="text/javascript">
+
+
+function calcula(){
+console.log("Calculando...");
+var valor1=document.getElementById("v1").value;
+var valor2=document.getElementById("cmbox1").value;
+var valor3=document.getElementById("cmbox2").value;
+var valor4=document.getElementById("v2").value;
+var resultado= (valor1 * valor2) / valor3;
+var total = eval(resultado);
+document.getElementById('v2').value = total;
+
+
+}
+                
+function borra(){
+    var a="";
+        document.getElementById('v1').value = a;
+        document.getElementById('v2').value =  a;
+    }</script>
+    
+
+    
+    </body>
+</html>

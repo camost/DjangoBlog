@@ -1,0 +1,115 @@
+{% load static %}
+{% load staticfiles %}
+
+
+
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<head>    
+
+<link type="text/css" rel="stylesheet" href="{% static 'css/cronometro.css' %}"  media="screen,projection"/>
+    
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+<link rel="icon" type="image/png" href="css/pelota.png" />
+<title>Cronometro</title>
+
+
+<div style="margin-left:45%;margin-top:200" id="cronometro">
+  <div id="reloj">00 : 00 : 00 : 00</div>
+  <form style="margin-left:-114;margin-top:60" name="cron" action="#">
+    <input class="button" type="button" value="Comenzar" name="empieza" />
+    <input class="button" type="button" value="Detener" name="para" />
+    <input class="button" type="button" value="Reanudar" name="continua" />
+    <input class="button" type="button" value="Resetear" name="reinicia" />
+  </form>
+</div>
+    
+</head>
+
+<body>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     <script type="text/javascript" >
+
+window.onload = function() {
+visor=document.getElementById("reloj");
+document.cron.empieza.onclick = empezar; 
+document.cron.para.onclick = parar;
+document.cron.continua.onclick = continuar;
+document.cron.reinicia.onclick = reiniciar;
+}
+var marcha=0; 
+var cro=0; 
+function empezar() {
+         if (marcha==0) {
+            emp=new Date()
+            elcrono=setInterval(tiempo,10);
+            marcha=1
+            }
+         }
+function tiempo() { 
+         actual=new Date() 
+         cro=actual-emp 
+         cr=new Date() 
+         cr.setTime(cro) 
+         cs=cr.getMilliseconds() 
+         cs=cs/10; 
+         cs=Math.round(cs)
+         sg=cr.getSeconds();
+         mn=cr.getMinutes();
+         ho=cr.getHours()-21; 
+         if (cs<10) {cs="0"+cs;} 
+         if (sg<10) {sg="0"+sg;} 
+         if (mn<10) {mn="0"+mn;} 
+         visor.innerHTML=ho+" : "+mn+" : "+sg+" : "+cs; 
+         }
+
+function parar() { 
+         if (marcha==1) {
+            clearInterval(elcrono); 
+            marcha=0; 
+            }		
+         }		 
+
+function continuar() {
+         if (marcha==0) {
+            emp2=new Date(); 
+            emp2=emp2.getTime(); 
+            emp3=emp2-cro;
+            emp=new Date(); 
+            emp.setTime(emp3);
+            elcrono=setInterval(tiempo,10); 
+            marcha=1;
+            }		
+         }
+
+function reiniciar() {
+         if (marcha==1) { 
+            clearInterval(elcrono);
+            marcha=0;	
+            }
+         cro=0; 
+         visor.innerHTML = "00: 00 : 00 : 00"; 
+         }	
+
+
+</script>
+    
+    
+    </body>
+
+</html>

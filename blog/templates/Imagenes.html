@@ -1,0 +1,94 @@
+{% load static %}
+{% load staticfiles %}
+
+
+<html>  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+    
+ <head>    
+
+<link type="text/css" rel="stylesheet" href="{% static 'css/Estilo.css' %}" media="screen,projection"/>
+    
+ <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+    
+<link rel="icon" type="image/png" href="css/pelota.png" />
+
+<title>Marco Electronico</title>
+  
+</head>
+
+  <body onload="both()">
+
+        <div class="dentro" id="pri2">
+                <div style="width:53%;margin-left:22%;margin-top:2%" class="progress" id="myBar">
+                    <div  class="determinate" id="label">10%</div>
+                </div>
+        <div style="margin-left:22%;margin-bottom:2%">
+            <img class="materialboxed" id="image" src="{% static 'img/1.jpg' %}">
+        </div>
+        </div>
+    
+    
+    
+      <script>
+
+
+
+
+            function both(){
+                imageChanger();
+                move();
+            }
+
+            function imageChanger(){
+                var image = document.getElementById("image");
+                switch(Math.floor(Math.random() * 5) + 1){
+                    case 1 :
+                        image.src = "{% static 'img/1.jpg' %}";
+                        break;
+                    case 2 :
+                        image.src = "{% static 'img/2.jpg' %}";
+                        break;
+                    case 3:
+                        image.src = "{% static 'img/3.jpg' %}";
+                        break;
+					case 4:
+						image.src = "{% static 'img/4.jpg' %}";
+						break;
+					case 5:
+						image.src = "{% static 'img/5.jpg' %}";
+						break;
+                }
+                setTimeout(imageChanger, 5000);
+            }
+
+
+            function move() {
+                var elem = document.getElementById("label");   
+                var width = 10;
+                var pro = 12;
+                var id = setInterval(frame, 56);
+
+                function frame() {
+                    if (width == 98 & pro == 100) {
+                        clearInterval(id);
+                        move();
+                    } else {
+                        pro++;
+                        width++; 
+                        elem.style.width = width + '%'; 
+                        document.getElementById("label").innerHTML = pro * 1  + '%';
+                    }
+                }
+            }
+    
+
+
+</script>
+
+        
+        
+    </body>
+
+
+</html>

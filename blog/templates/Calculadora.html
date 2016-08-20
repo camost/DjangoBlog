@@ -1,0 +1,141 @@
+<html>
+
+
+<head>
+    
+
+<style>        
+        
+        .estilo [type=button]{
+             border-radius: 6px;
+            background-color: aquamarine;
+            
+            
+            
+        }
+        
+        body{
+                background-color: #B0BEC5;!important
+    font-family: 'Roboto', sans-serif; !important
+
+        }
+
+        
+        #div1{
+            
+            border-style: solid;
+            border-radius: 10px;
+            text-align: center;
+            width:35%;
+			height:50%;
+            border-color: black;
+            background-color: #009688;
+            margin-left: 32%;
+            margin-top: 5%;
+            
+        }</style>
+    
+    
+    
+</head>
+
+<body>
+<div id="div1"; class="estilo"
+     
+     >   
+   
+
+    <p>
+    <input style="margin-top:2%;background-color:white;width:67%;border-radius:4px;color:black;height:10%;" disabled type="text" value="" id="display">
+    </p> &nbsp
+    <p>
+    <input style="color:black" class="waves-light btn"type="button" value="7" id="num7" onclick="e(id)">
+ &nbsp
+    <input style="color:black" class="waves-light btn" type="button" value="8" id="num8" onclick="e(id)">
+ &nbsp
+    <input style="color:black" class="waves-light btn" type="button" value="9" id="num9" onClick="e(id)">
+ &nbsp
+    <input style="color:black" class="waves-light btn" type="button" value="c" id="borrar" onClick="borrar()">
+ &nbsp
+    
+    </p> &nbsp
+    
+<p>
+    <input style="color:black" class="waves-light btn" type="button" value="4"id="num4" onclick="e(id)">
+ &nbsp
+    <input style="color:black" class="waves-light btn" type="button" value="5" id="num5" onclick="e(id)">
+ &nbsp
+    <input style="color:black" class="waves-light btn" type="button" value="6"id="num6" onclick="e(id)">
+ &nbsp
+    <input style="color:black" class="waves-light btn" type="button" value="*"id="multp" onClick="e(id)">
+ &nbsp
+   </p> &nbsp
+    
+    <p>
+    <input style="color:black" class="waves-light btn" type="button" value="1"id="num1" onClick="e(id)">
+ &nbsp
+    <input style="color:black" class="waves-light btn" type="button" value="2"id="num2" onClick="e(id)">
+ &nbsp
+    <input style="color:black" class="waves-light btn" type="button" value="3"id="num3" onClick="e(id)" >
+ &nbsp
+    <input style="color:black" class="waves-light btn" type="button" value="/"id="divid" onClick="e(id)">
+ &nbsp
+    </p>
+&nbsp
+        <p>
+    <input style="color:black" class="waves-light btn" type="button" value="0"id="numcero" onClick="e(id)">
+ &nbsp
+    <input style="color:black" class="waves-light btn" type="button" value="="id="igual" onClick="total(id)">
+ &nbsp
+    <input style="color:black" class="waves-light btn" type="button" value="+"id="sumar" onClick="e(id)">
+ &nbsp
+    <input style="color:black" class="waves-light btn" type="button" value="-"id="restar" onClick="e(id)">
+ &nbsp
+   
+    </p>
+    
+    </div>
+
+    
+      <script>
+        
+    function e(id){
+        var primero=document.getElementById(id);
+        var segundo=document.getElementById('display');
+        var total=segundo.value + primero.value;
+        document.getElementById('display').value=total;
+            
+    }
+        
+        
+    function borrar(){
+        document.getElementById('display').value="";
+    }
+    
+    		    function total(){ 
+		        var tt = document.getElementById('display').value;
+		        var print = eval(tt);
+		        document.getElementById('display').value = print;}
+
+    
+    
+    
+    </script>
+<noscript>Your browser does not support JavaScript!</noscript>
+
+
+
+
+
+
+</body>
+
+  
+
+
+
+
+
+
+
+</html>

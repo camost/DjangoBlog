@@ -1,0 +1,109 @@
+{% load static %}
+{% load staticfiles %}
+
+
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<head>
+    
+    <link rel="stylesheet" href="css/Chistoso2.css">
+    
+<link type="text/css" rel="stylesheet" href="{% static 'css/Chistoso2.css' %}"  media="screen,projection"/>
+    
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+<link rel="icon" type="image/png" href="css/pelota.png" />
+
+    <title>Formulario</title>
+    
+    
+    
+    <div style="margin-top:350;margin-left:850;" id="botonsito" onmouseover="movere()" > <h4 onclick="ganar()">Continuar</h4>   </div>
+    
+
+
+        <script >
+
+
+function movere(){
+    
+    var boton =document.getElementById("botonsito");
+    var a=Math.random();
+    var a= a*300;
+    var b=Math.random();
+    var b= b*250;
+    boton.style.left=a;
+    boton.style.top=b;
+    
+    
+    
+}
+
+
+
+</script>
+
+
+    
+    
+    
+    
+    </head>
+
+
+<body>
+    
+    <div style="margin-top:200;margin-left:200;">
+    <form class="col s12">
+            <div class="row">
+              <div class="input-field col s6">
+                <input  style="width:300;color:black;" placeholder="Placeholder" id="first_name" type="text" class="validate">
+                <label style="color:black;font-size:18px;" for="first_name" class="active">Nombre:</label>
+              </div>
+              <div class="input-field col s6">
+                <input  style="width:300;" placeholder="Placeholder" id="first_name" type="text" class="validate">
+                <label style="color:black;font-size:18px;" for="first_name" class="active">Apellido:</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <input  style="width:300;" placeholder="Placeholder" id="first_name" type="password" class="validate">
+                <label style="color:black;font-size:18px;" for="first_name" class="active">Contraseña:</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input  style="width:400;" placeholder="Placeholder" id="first_name" type="text" class="validate">
+                <label style="color:black;font-size:18px;" for="first_name" class="active">Email:</label>
+              </div>
+            </div>
+          </form>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </body>
+
+
+
+
+</html>
